@@ -13,13 +13,13 @@ with open(csvpath, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     
     print(csvreader)
-
+   
 # Read The Header Row First (Skip This Step If There Is No Header)
     csv_header = next(csvreader)
     for row in csv.reader(csvfile):
         total_months.append(row[0])
         net_amount.append(int(row[1]))
-    # print(f"CSV Header: {csv_header}")
+    print(f"CSV Header: {csv_header}")
 
     for a in range(len(net_amount) -1):
         monthly_change.append(net_amount[a+1] - net_amount[a])
