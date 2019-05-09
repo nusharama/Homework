@@ -18,23 +18,31 @@ with open(csvpath, newline='') as csvfile:
     csv_header = next(csvreader)
     for row in csv.reader(csvfile):
         total_months.append(row[0])
-        net_amount.append(int(row[1]))
+        net_amount.append(int(row[2]))
     print(f"CSV Header: {csv_header}")
 
     for a in range(len(net_amount) -1):
         monthly_change.append(net_amount[a+1] - net_amount[a])
      
-    Increase_max_change = max(monthly_change)
-    Decrease_max_change = min(monthly_change)
+    for row in csv.reader(csvfile):
+        max_value = 0
+        month_count = 0
+        if (int(row[0]) > max_value):
+            max_value = int(row[2])
+            month_count = row[1]
+
+    # Increase_max_change = max(monthly_change)
+    # Decrease_max_change = min(monthly_change)
      
     print(f'Financial Analysis')
     print('----------------------------------------------------------------------------')
     print(f"Total Months: {len(total_months)}")
     print(f"Net Profit: {sum(net_amount)}")
     print(f"Average Change: ${round(sum(monthly_change)/len(monthly_change),2)}")
-    print(f"Greatest Increase in Profits: ${str(max(monthly_change))}")
-    print(f"Greatest Decrease in Profits: ${str(min(monthly_change))}")
-
+    # print(f"Greatest Increase in Profits: ${str(max(monthly_change))}")
+    # print(f"Greatest Decrease in Profits: ${str(min(monthly_change))}")
+    print(f"Greatest Increase in Profits: ${str(month_count)}")
+    print(f"Greatest Decrease in Profits: ${str(month_count)}")
 # Dependencies
 import os
 import csv
