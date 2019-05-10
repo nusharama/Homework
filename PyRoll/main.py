@@ -71,7 +71,7 @@ print(f"Correy: {correy_percent:.3%} ({correy_votes})")
 print(f"Li: {li_percent:.3%} ({li_votes})")
 print(f"OTooley: {otooley_percent:.3%} ({otooley_votes})")
 print(f"---------------------------")
-print(f"Winner: {winner_name}")
+print(f"Winner:{winner_name}")
 print(f"---------------------------")
 # for x in range(len(candidate_list)):
 #         print.append(candidate_list[x] + ': ' + str(round(percentage[x],1)) + '% ' + '(' + str(each_vote[x]) + ')')
@@ -98,7 +98,7 @@ with open(output_path, 'w', newline='') as csvfile:
     csvwriter.writerow([f"Li: {li_percent:.3%} ({li_votes})"]) 
     csvwriter.writerow([f"O'Tooley: {otooley_percent:.3%} ({otooley_votes})"])
     csvwriter.writerow(["---------------------------"])
-    csvwriter.writerow([f" {winner_name}"])
+    csvwriter.writerow([f" Winner: {winner_name}"])
     csvwriter.writerow(["---------------------------"])
 
     # Write the first row (column headers)
