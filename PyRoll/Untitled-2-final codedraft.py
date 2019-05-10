@@ -102,11 +102,11 @@ with open(output_path, 'w', newline='') as csvfile:
     # csvwriter.writerow(f"---------------------------")
     # csvwriter.writerow(f"Total Votes: {total_votes}")
     # csvwriter.writerow(f"---------------------------")
-    csvwriter.writerow(f"{khan_percent:.3%} {khan_votes})"),(f"{correy_percent:.3%} ({correy_votes})"), 
-    (f"{li_percent:.3%} ({li_votes})"), (f"{otooley_percent:.3%} ({otooley_votes})"), 
-    (f"{winner_name}")
+csvwriter.writerow(f"{khan_percent:.3%} {khan_votes})"),(f"{correy_percent:.3%} ({correy_votes})"), 
+(f"{li_percent:.3%} ({li_votes})"), (f"{otooley_percent:.3%} ({otooley_votes})"), 
+(f"{winner_name}")
     # csvwriter.writerow(f"---------------------------")
 
     
-    csvwriter.writerow([len(total_votes), len("khan_percent:.3% \n"), khan_votes, len("correy_percent:.3% \n"), correy_votes, 
-    len("li_percent:.3% \n"), li_votes, len("otooley_percent:.3% \n"), otooley_votes, winner_name])
+csvwriter.writerow([(total_votes), len("khan_percent:.3% \n"), khan_votes, len("correy_percent:.3% \n"), correy_votes, 
+len("li_percent:.3% \n"), li_votes, len("otooley_percent:.3% \n"), otooley_votes, winner_name]) 
