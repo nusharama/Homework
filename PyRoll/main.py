@@ -1,7 +1,7 @@
 import csv
 import os
 
-csvpath = os.path.join(".", "desktop", "python-challenge", "PyRoll", 'election_data.csv')
+csvpath = os.path.join(".", "PyRoll", 'election_data.csv')
 
 # The total number of votes included in the dataset
 total_votes = 0
@@ -77,25 +77,27 @@ import os
 import csv
 
 # Specify the file to write to
-output_path = os.path.join(".", "desktop", "python-challenge","PyRoll", 'Election_Results.csv')
+# output_path = os.path.join(".", "desktop", "python-challenge","PyRoll", 'Election_Results.csv')
 
 # Open the file using "write" mode. Specify the variable to hold the contents
-with open(output_path, 'w', newline='') as csvfile:
+# with open(output_path, 'w', newline='') as csvfile:
 
 # Initialize csv.writer
-    csvwriter = csv.writer(csvfile, delimiter=',', )
+    # csvwriter = csv.writer(csvfile, delimiter=',', )
 # Write the second row
-    csvwriter.writerow(["Election Results"])
-    csvwriter.writerow(["---------------------------"])
-    csvwriter.writerow([f"Total Votes: {total_votes}"])
-    csvwriter.writerow(["---------------------------"])
-    csvwriter.writerow([f"Khan: {khan_percent:.3%} ({khan_votes})"])
-    csvwriter.writerow([f"Correy: {correy_percent:.3%} ({correy_votes})"]) 
-    csvwriter.writerow([f"Li: {li_percent:.3%} ({li_votes})"]) 
-    csvwriter.writerow([f"O'Tooley: {otooley_percent:.3%} ({otooley_votes})"])
-    csvwriter.writerow(["---------------------------"])
-    csvwriter.writerow([f" Winner: {winner_name}"])
-    csvwriter.writerow(["---------------------------"])
+
+with open('PyRoll\Election Results.txt', 'w') as outfile:
+    print(f"Election Results", file=outfile)
+    print(f"---------------------------", file=outfile)
+    print(f"Total Votes: {total_votes}", file=outfile)
+    print("---------------------------", file=outfile)
+    print(f"Khan: {khan_percent:.3%} ({khan_votes})", file=outfile)
+    print(f"Correy: {correy_percent:.3%} ({correy_votes})", file=outfile) 
+    print(f"Li: {li_percent:.3%} ({li_votes})", file=outfile) 
+    print(f"O'Tooley: {otooley_percent:.3%} ({otooley_votes})", file=outfile)
+    print("---------------------------", file=outfile)
+    print(f" Winner: {winner_name}", file=outfile)
+    print("---------------------------", file=outfile)
 
     
 
