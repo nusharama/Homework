@@ -8,8 +8,7 @@ khan_votes = 0
 correy_votes = 0
 li_votes = 0
 otooley_votes = 0
-# each_vote = []
-# candidate_list = []
+
 percentage = []
 khan_percent = 0
 correy_percent = 0
@@ -46,9 +45,7 @@ with open(csvpath, newline='') as csvfile:
     li_percent = li_votes / total_votes
     otooley_percent = otooley_votes / total_votes
 
-    # for x in total_votes:
-    #     percentage.append((int(x)/total_votes)*100)
-    
+        
     # Calculate Winner Of The Election Based On Popular Vote
     winner = max(khan_votes, correy_votes, li_votes, otooley_votes)
 
@@ -73,9 +70,7 @@ print(f"OTooley: {otooley_percent:.3%} ({otooley_votes})")
 print(f"---------------------------")
 print(f"Winner:{winner_name}")
 print(f"---------------------------")
-# for x in range(len(candidate_list)):
-#         print.append(candidate_list[x] + ': ' + str(round(percentage[x],1)) + '% ' + '(' + str(each_vote[x]) + ')')
-        
+
 # # Dependencies
 import os
 import csv
@@ -101,16 +96,6 @@ with open(output_path, 'w', newline='') as csvfile:
     csvwriter.writerow([f" Winner: {winner_name}"])
     csvwriter.writerow(["---------------------------"])
 
-    # Write the first row (column headers)
-    # csvwriter.writerow(['Election Results', 'Total Votes', 
-    # 'Khan', 
-    # 'Correy', 
-    # 'Li', 
-    # 'O''Tooley', 
-    # 'Winner'])
-
-
-
     
-# csvwriter.writerow([(total_votes), len("khan_percent:.3% \n"), khan_votes, len("correy_percent:.3% \n"), correy_votes, 
-#     len("li_percent:.3% \n"), li_votes, len("otooley_percent:.3% \n"), otooley_votes, winner_name]) 
+
+

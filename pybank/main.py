@@ -1,5 +1,6 @@
 import os
 import csv
+
 csvpath = os.path.join(".", "desktop", "python-challenge","pybank",'budget_data.csv')
 
 # The total number of months included in the dataset
@@ -46,14 +47,14 @@ with open(output_path, 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=',')
 
     # Write the first row (column headers)
-    csvwriter.writerow(['Total Months', 
+csvwriter.writerow(['Total Months', 
     'Net Profit', 
     'Average Change', 
     'Greatest Increase in Profits', 
     'Greatest Decrease in Profits'])
 
     # Write the second row
-    csvwriter.writerow([len(total_months), 
+csvwriter.writerow([len(total_months), 
     sum(net_amount), 
     round(sum(monthly_change)/len(monthly_change),2), 
     (max(monthly_change)), 
