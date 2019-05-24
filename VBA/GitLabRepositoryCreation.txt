@@ -1,0 +1,49 @@
+$ cd
+
+anoos@DESKTOP-NTC4FVP MINGW64 ~
+$ cd C:\Users\anoos\Desktop\BootCamp_Assignments_AR\Module1
+bash: cd: C:UsersanoosDesktopBootCamp_Assignments_ARModule1: No such file or directory
+
+anoos@DESKTOP-NTC4FVP MINGW64 ~
+$ cd desktop                                                                                                                                                                                                                                 
+anoos@DESKTOP-NTC4FVP MINGW64 ~/desktop
+$ cd BootCamp_Assignments_AR                                                                                                                                                                                                                 
+anoos@DESKTOP-NTC4FVP MINGW64 ~/desktop/BootCamp_Assignments_AR
+$ cd Module1                                                                                                                                                                                                                                 
+anoos@DESKTOP-NTC4FVP MINGW64 ~/desktop/BootCamp_Assignments_AR/Module1
+$ git init                                                                                                                                                                                                                                   Initialized empty Git repository in C:/Users/anoos/Desktop/BootCamp_Assignments_AR/Module1/.git/
+
+anoos@DESKTOP-NTC4FVP MINGW64 ~/desktop/BootCamp_Assignments_AR/Module1 (master)
+$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+
+anoos@DESKTOP-NTC4FVP MINGW64 ~/desktop/BootCamp_Assignments_AR/Module1 (master)
+$ git add .
+
+anoos@DESKTOP-NTC4FVP MINGW64 ~/desktop/BootCamp_Assignments_AR/Module1 (master)
+$ git commit -m "first Commit"
+[master (root-commit) 03f39aa] first Commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 KickStarterBook-AnushaR.xlsx
+ create mode 100644 Kickstarter questions and conclusions.docx
+
+anoos@DESKTOP-NTC4FVP MINGW64 ~/desktop/BootCamp_Assignments_AR/Module1 (master)
+$ git remote add origin git@richmond.bootcampcontent.com:nushrama/Excel-VBA.git
+
+anoos@DESKTOP-NTC4FVP MINGW64 ~/desktop/BootCamp_Assignments_AR/Module1 (master)
+$ git remote -v
+origin  git@richmond.bootcampcontent.com:nushrama/Excel-VBA.git (fetch)
+origin  git@richmond.bootcampcontent.com:nushrama/Excel-VBA.git (push)
+
+anoos@DESKTOP-NTC4FVP MINGW64 ~/desktop/BootCamp_Assignments_AR/Module1 (master)
+$ git push origin master
+Enter passphrase for key '/c/Users/anoos/.ssh/id_rsa':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 2.20 MiB | 4.86 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To richmond.bootcampcontent.com:nushrama/Excel-VBA.git
+ * [new branch]      master -> master

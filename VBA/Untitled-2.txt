@@ -1,0 +1,19 @@
+For i = 1 To 8
+For j = 1 To 8
+If i Mod 2 = 0 Then
+If j Mod 2 <> 0 Then
+Cells(i, j).Interior.ColorIndex = 1
+End If
+
+
+Dim name As String
+name = "Gandalf"
+MsgBox (name)
+
+Dim title As String
+title = "The Great"
+
+Dim fullname As String
+fullname = name + " " + title
+
+MsgBox (fullname)
