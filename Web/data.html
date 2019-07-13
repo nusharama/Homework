@@ -1,0 +1,533 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Bootstrap Visualization Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <!-- Navigation Section -->
+  <div class="navigation">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" style="background-color: #0BADA6;" href="index.html">Latitude</a>
+        <button class="navbar-toggler border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Plots
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="max_temperature.html">Max Temperature</a>
+                <a class="dropdown-item" href="humidity.html">Humidity</a>
+                <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="comparisons.html">Comparison</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data.html">Data</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Content Section -->
+    <div class="container">
+      <div class="box">
+        <h3 class="title">Data</h3>
+        <hr>
+        <p>The following table includes all of the data used for plotting during this project.</p>
+        <br>
+        <div class="table-responsive" style="overflow-x:auto; overflow-y:auto; max-height:470px; max-width: auto;">
+            <table class="table table-striped">
+                <style>
+                    table, th, td {
+                      border: 1px solid black;
+                      border-collapse: collapse;
+                    }
+                    th, td {
+                      padding: 50px;
+                    }
+                    th {
+                      text-align: left;
+                    }
+                    </style>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>City Name</th>
+            <th>Cloudiness</th>
+            <th>Country</th>
+            <th>Date</th>
+            <th>Humidity</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Max Temperature </th>
+            <th>WindSpeed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">0</th>
+            <td>Beringovskiy</td>
+            <td>0</td>
+            <td>RU</td>
+            <td>1562948710</td>
+            <td>81</td>
+            <td>63.05</td>
+            <td>179.32</td>
+            <td>53.12</td>
+            <td>5.19</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>Puerto Ayora</td>
+            <td>75</td>
+            <td>EC</td>
+            <td>1562948711</td>
+            <td>69</td>
+            <td>-0.74</td>
+            <td>-90.35</td>
+            <td>77</td>
+            <td>16.11</td>
+          </tr>
+          <tr>
+              <th scope="row">2</th>
+              <td>Sitka</td>
+              <td>0</td>
+              <td>US</td>
+              <td>1562948712</td>
+              <td>57</td>
+              <td>37.17</td>
+              <td>-99.65</td>
+              <td>82.99</td>
+              <td>8.01</td>
+            </tr>
+          <tr>
+                <th scope="row">3</th>
+                <td>Hambantota</td>
+                <td>40</td>
+                <td>LK</td>
+                <td>1562948713</td>
+                <td>94</td>
+                <td>6.12</td>
+                <td>81.12</td>
+                <td>82.40</td>
+                <td>6.93</td>
+              </tr>
+            <tr>
+                  <th scope="row">4</th>
+                  <td>Bambous Virieux</td>
+                  <td>40</td>
+                  <td>MU</td>
+                  <td>1562948715</td>
+                  <td>64</td>
+                  <td>-20.34</td>
+                  <td>57.76</td>
+                  <td>71.60</td>
+                  <td>11.41</td>
+                </tr>
+            <tr>
+                    <th scope="row">5</th>
+                    <td>Alofi</td>
+                    <td>75</td>
+                    <td>NU</td>
+                    <td>1562948716</td>
+                    <td>94</td>
+                    <td>-19.06</td>
+                    <td>-169.92</td>
+                    <td>73.40</td>
+                    <td>2.24</td>
+                  </tr>
+            <tr>
+                      <th scope="row">6</th>
+                      <td>Lodja</td>
+                      <td>97</td>
+                      <td>CD</td>
+                      <td>1562948717</td>
+                      <td>48</td>
+                      <td>-3.52</td>
+                      <td>23.60</td>
+                      <td>86.06</td>
+                      <td>1.99</td>
+                </tr>
+            <tr>
+                    <th scope="row">7</th>
+                    <td>Kahului</td>
+                    <td>1</td>
+                    <td>US</td>
+                    <td>1562948125</td>
+                    <td>78</td>
+                    <td>20.89</td>
+                    <td>-156.47</td>
+                    <td>73.40</td>
+                    <td>15.28</td>
+              </tr>
+            <tr>
+                  <th scope="row">8</th>
+                  <td>Bellevue</td>
+                  <td>1</td>
+                  <td>US</td>
+                  <td>1562948125</td>
+                  <td>78</td>
+                  <td>20.89</td>
+                  <td>-156.47</td>
+                  <td>73.40</td>
+                  <td>15.28</td>
+              </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>Port Elizabeth</td>
+                <td>40</td>
+                <td>US</td>
+                <td>1562948721</td>
+                <td>74</td>
+                <td>39.31</td>
+                <td>-74.98</td>
+                <td>87.01</td>
+                <td>6.93</td>
+              </tr>
+          <tr>
+              <th scope="row">10</th>
+              <td>Albany</td>
+              <td>90</td>
+              <td>US</td>
+              <td>1562948427</td>
+              <td>69</td>
+              <td>42.65</td>
+              <td>-73.75</td>
+              <td>81.00</td>
+              <td>8.05</td>
+            </tr>
+          <tr>
+                <th scope="row">11</th>
+                <td>Lebu</td>
+                <td>100</td>
+                <td>ET</td>
+                <td>1562948723</td>
+                <td>78</td>
+                <td>8.96</td>
+                <td>38.73</td>
+                <td>64.10</td>
+                <td>3.00</td>
+              </tr>
+          <tr>
+                  <th scope="row">12</th>
+                  <td>Zamora</td>
+                  <td>0</td>
+                  <td>ES</td>
+                  <td>1562948724</td>
+                  <td>16</td>
+                  <td>41.51</td>
+                  <td>-5.74</td>
+                  <td>100.99</td>
+                  <td>4.70</td>
+                </tr>  
+          <tr>
+                    <th scope="row">13</th>
+                    <td>Ponta do Sol</td>
+                    <td>0</td>
+                    <td>BR</td>
+                    <td>1562948726</td>
+                    <td>33</td>
+                    <td>-20.63</td>
+                    <td>-46.00</td>
+                    <td>74.72</td>
+                    <td>0.20</td>
+                </tr> 
+          <tr>
+                    <th scope="row">14</th>
+                    <td>Butaritari</td>
+                    <td>0</td>
+                    <td>KI</td>
+                    <td>1562948727</td>
+                    <td>71</td>
+                    <td>3.07</td>
+                    <td>172.79</td>
+                    <td>84.44</td>
+                    <td>8.97</td>
+                  </tr> 
+          <tr>
+                    <th scope="row">15</th>
+                    <td>Colonia</td>
+                    <td>40</td>
+                    <td>RO</td>
+                    <td>1562948728</td>
+                    <td>43</td>
+                    <td>3.07</td>
+                    <td>172.79</td>
+                    <td>84.44</td>
+                    <td>4.70</td>
+                  </tr> 
+          <tr>
+                      <th scope="row">16</th>
+                      <td>Saint-Philippe</td>
+                      <td>90</td>
+                      <td>CA</td>
+                      <td>1562948528</td>
+                      <td>78</td>
+                      <td>45.36</td>
+                      <td>-73.48</td>
+                      <td>77.00</td>
+                      <td>11.41</td>
+                  </tr> 
+          <tr>
+                    <th scope="row">17</th>
+                    <td>Purpe</td>
+                    <td>95</td>
+                    <td>RU</td>
+                    <td>1562948731</td>
+                    <td>69</td>
+                    <td>64.48</td>
+                    <td>76.69</td>
+                    <td>64.99</td>
+                    <td>8.75</td>
+                </tr>
+          <tr>
+                  <th scope="row">18</th>
+                  <td>CidreiraPurpe</td>
+                  <td>100</td>
+                  <td>BR</td>
+                  <td>1562948732</td>
+                  <td>57</td>
+                  <td>-30.17</td>
+                  <td>-50.22</td>
+                  <td>71.12</td>
+                  <td>7.83</td>
+              </tr>
+          <tr>
+                <th scope="row">19</th>
+                <td>Helong</td>
+                <td>100</td>
+                <td>CN</td>
+                <td>1562948734</td>
+                <td>91</td>
+                <td>25.94</td>
+                <td>116.13</td>
+                <td>75.44</td>
+                <td>4.61</td>
+              </tr>
+          <tr>
+              <th scope="row">20</th>
+              <td>Pathardi</td>
+              <td>100</td>
+              <td>IN</td>
+              <td>1562948735</td>
+              <td>76</td>
+              <td>19.17</td>
+              <td>75.17</td>
+              <td>78.32</td>
+              <td>14.23</td>
+            </tr>
+        <tr>
+            <th scope="row">21</th>
+            <td>Punta Arenas</td>
+            <td>90</td>
+            <td>CL</td>
+            <td>1562948736</td>
+            <td>93</td>
+            <td>-53.16</td>
+            <td>-70.91</td>
+            <td>41.00</td>
+            <td>11.41</td>
+          </tr>
+        <tr>
+              <th scope="row">22</th>
+              <td>Mataura</td>
+              <td>71</td>
+              <td>NZ</td>
+              <td>1562948737</td>
+              <td>86</td>
+              <td>-46.19</td>
+              <td>168.86</td>
+              <td>46.00</td>
+              <td>5.99</td>
+            </tr>
+        <tr>
+              <th scope="row">23</th>
+              <td>Kurilsk</td>
+              <td>100</td>
+              <td>RU</td>
+              <td>1562948739</td>
+              <td>89</td>
+              <td>45.23</td>
+              <td>147.88</td>
+              <td>51.86</td>
+              <td>14.12</td>
+            </tr>
+        <tr>
+              <th scope="row">24</th>
+              <td>Rikitea</td>
+              <td>41</td>
+              <td>PF</td>
+              <td>1562948740</td>
+              <td>79</td>
+              <td>-23.12</td>
+              <td>-134.97</td>
+              <td>74.00</td>
+              <td>15.52</td>
+            </tr>
+        <tr>
+              <th scope="row">25</th>
+              <td>Pevek</td>
+              <td>0</td>
+              <td>RU</td>
+              <td>1562948741</td>
+              <td>79</td>
+              <td>69.70</td>
+              <td>170.27</td>
+              <td>43.22</td>
+              <td>5.39</td>
+            </tr>
+        <tr>
+              <th scope="row">26</th>
+              <td>Dikson</td>
+              <td>99</td>
+              <td>RU</td>
+              <td>1562948743</td>
+              <td>90</td>
+              <td>73.51</td>
+              <td>80.55</td>
+              <td>34.30</td>
+              <td>17.29</td>
+            </tr>
+        <tr>
+              <th scope="row">27</th>
+              <td>Leningradskiy</td>
+              <td>32</td>
+              <td>RU</td>
+              <td>1562948744</td>
+              <td>79</td>
+              <td>69.38</td>
+              <td>178.42</td>
+              <td>45.20</td>
+              <td>1.95</td>
+            </tr>
+        <tr>
+              <th scope="row">28</th>
+              <td>Isangel</td>
+              <td>0</td>
+              <td>VU</td>
+              <td>1562948745</td>
+              <td>80</td>
+              <td>-19.55</td>
+              <td>169.27</td>
+              <td>72.74</td>
+              <td>20.00</td>
+            </tr>
+        <tr>
+              <th scope="row">29</th>
+              <td>Tasiilaq</td>
+              <td>20</td>
+              <td>GL</td>
+              <td>1562948747</td>
+              <td>75</td>
+              <td>65.61</td>
+              <td>-37.64</td>
+              <td>46.40</td>
+              <td>5.82</td>
+            </tr>
+        <tr>
+              <th scope="row">30</th>
+              <td>Vaini</td>
+              <td>95</td>
+              <td>IN</td>
+              <td>1562948748</td>
+              <td>90</td>
+              <td>15.34</td>
+              <td>74.49</td>
+              <td>77.96</td>
+              <td>4.90</td>
+            </tr>
+        <tr>
+              <th scope="row">31</th>
+              <td>Jega</td>
+              <td>65</td>
+              <td>NG</td>
+              <td>1562948749</td>
+              <td>37</td>
+              <td>12.22</td>
+              <td>4.38</td>
+              <td>95.42</td>
+              <td>9.28</td>
+            </tr>
+        <tr>
+              <th scope="row">32</th>
+              <td>Qaanaaq</td>
+              <td>100</td>
+              <td>GL</td>
+              <td>1562948750</td>
+              <td>61</td>
+              <td>77.48</td>
+              <td>-69.36</td>
+              <td>47.00</td>
+              <td>10.13</td>
+            </tr>
+        <tr>
+              <th scope="row">33</th>
+              <td>Luderitz</td>
+              <td>0</td>
+              <td>NA</td>
+              <td>1562948752</td>
+              <td>55</td>
+              <td>-26.65</td>
+              <td>15.16</td>
+              <td>66.20</td>
+              <td>13.87</td>
+            </tr>
+        <tr>
+              <th scope="row">34</th>
+              <td>Nikolskoye</td>
+              <td>75</td>
+              <td>RU</td>
+              <td>1562948753</td>
+              <td>62</td>
+              <td>59.70</td>
+              <td>30.79</td>
+              <td>57.20</td>
+              <td>11.18</td>
+            </tr>
+        </tbody>
+      </table>
+        
+        
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer">Copyright &copy; Anusha Ramachandran 2019</div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
