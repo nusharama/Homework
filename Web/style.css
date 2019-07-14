@@ -16,7 +16,7 @@ body{
 }
 .navbar{
     background-color: white; 
-    font-size: 15px; 
+    font-size: 30px; 
 }
 .active, .dropdown-menu .dropdown-item:active a:hover{
     background-color:#E7E7E7!important; 
@@ -29,7 +29,7 @@ body{
 }
 a{
     color: #6D8092;
-    font-size: 15px; 
+    font-size: 30px; 
 }
 .nav-link:hover{
     background-color:#E7E7E7 !important;
