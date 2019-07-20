@@ -1,5 +1,5 @@
 # Import Dependecies 
-from bs4 import BeautifulSoup 
+from bs4 import BeautifulSoup as bs
 from splinter import Browser
 import pandas as pd 
 import requests 
@@ -16,7 +16,7 @@ def init_browser():
     #Windows Users
     # executable_path = {'executable_path': '/Users/cantu/Desktop/Mission-to-Mars'}
     # return Browser('chrome', **executable_path, headless=False)
-    exec_path = {'executable_path': '/app/.chromedriver/bin/chromedriver'}
+    exec_path = {'executable_path': 'chromedriver.exe'}
     return Browser('chrome', headless=True, **exec_path)
 
 # Create Mission to Mars global dictionary that can be imported into Mongo
@@ -39,7 +39,7 @@ def scrape_mars_news():
         html = browser.html
 
         # Parse HTML with Beautiful Soup
-        soup = BeautifulSoup(html, 'html.parser')
+        soup = bs(html, 'html.parser')
 
 
         # Retrieve the latest element that contains news title and news_paragraph
@@ -74,7 +74,7 @@ def scrape_mars_image():
         html_image = browser.html
 
         # Parse HTML with Beautiful Soup
-        soup = BeautifulSoup(html_image, 'html.parser')
+        soup = bs(html_image, 'html.parser')
 
         # Retrieve background-image url from style tag 
         featured_image_url  = soup.find('article')['style'].replace('background-image: url(','').replace(');', '')[1:-1]
@@ -116,20 +116,20 @@ def scrape_mars_weather():
         html_weather = browser.html
 
         # Parse HTML with Beautiful Soup
-        soup = BeautifulSoup(html_weather, 'html.parser')
+        soup = bs(html_weather, 'html.parser')
 
         # Find all elements that contain tweets
         latest_tweets = soup.find_all('div', class_='js-tweet-text-container')
 
         # Retrieve all elements that contain news title in the specified range
         # Look for entries that display weather related words to exclude non weather related tweets 
-        for tweet in latest_tweets: 
-            weather_tweet = tweet.find('p').text
-            if 'Sol' and 'pressure' in weather_tweet:
+        for i in range(10): 
+            weather_tweet = latest_tweets[i].text
+            if 'sol' in weather_tweet:
                 print(weather_tweet)
-                break
-            else: 
-                pass
+            break
+        else: 
+            pass
 
         # Dictionary entry from WEATHER TWEET
         mars_info['weather_tweet'] = weather_tweet
@@ -150,7 +150,7 @@ def scrape_mars_facts():
     mars_facts = pd.read_html(facts_url)
 
     # Find the mars facts DataFrame in the list of DataFrames as assign it to `mars_df`
-    mars_df = mars_facts[0]
+    mars_df = mars_facts[1]
 
     # Assign the columns `['Description', 'Value']`
     mars_df.columns = ['Description','Value']
@@ -185,7 +185,7 @@ def scrape_mars_hemispheres():
         html_hemispheres = browser.html
 
         # Parse HTML with Beautiful Soup
-        soup = BeautifulSoup(html_hemispheres, 'html.parser')
+        soup = bs(html_hemispheres, 'html.parser')
 
         # Retreive all items that contain mars hemispheres information
         items = soup.find_all('div', class_='item')
@@ -211,7 +211,7 @@ def scrape_mars_hemispheres():
             partial_img_html = browser.html
             
             # Parse HTML with Beautiful Soup for every individual hemisphere information website 
-            soup = BeautifulSoup( partial_img_html, 'html.parser')
+            soup = bs( partial_img_html, 'html.parser')
             
             # Retrieve full image source 
             img_url = hemispheres_main_url + soup.find('img', class_='wide-image')['src']
