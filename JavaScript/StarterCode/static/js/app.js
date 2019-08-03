@@ -82,19 +82,46 @@ button.on("click", function() {
 
 
 //City function
-
 var tbody = d3.select("tbody");
 tbody.html("");
-var button = d3.select("#filter-btn");
+var button = d3.select("#filter-btn-city");
 
 button.on("click", function() {
     console.log("Button pressed!")
     tbody.html("");
-    var newdate = d3.select("#datetime").property("value");
-    console.log(newdate);
+    var newcity = d3.select("#city").property("value");
+    console.log(newcity);
 
     var outputData = data.filter(function(filteredData) {
-        return(filteredData.datetime == newdate)
+        return(filteredData.city == newcity)
+    });
+    console.log(outputData)
+    outputData.forEach(function(ufoSightings) {
+        // console.log(ufoSightings);
+        var row = tbody.append("tr");
+        Object.entries(ufoSightings).forEach(function([key, value]) {
+        //   console.log(key, value);
+          // Append a cell to the row for each value
+          // in the weather report object
+          var cell = row.append("td");
+          cell.text(value);
+        });
+      });
+});
+
+//State function
+var tbody = d3.select("tbody");
+tbody.html("");
+var button = d3.select("#filter-btn-state");
+
+button.on("click", function() {
+    console.log("Button pressed!")
+    tbody.html("");
+    var newstate = d3.select("#state").property("value");
+    console.log(newstate);
+
+    var outputData = data.filter(function(filteredData) {
+        return(filteredData.state == newstate)
     });
     console.log(outputData)
     outputData.forEach(function(ufoSightings) {
