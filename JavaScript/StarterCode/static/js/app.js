@@ -137,6 +137,62 @@ button.on("click", function() {
       });
 });
 
+//Country function
+var tbody = d3.select("tbody");
+tbody.html("");
+var button = d3.select("#filter-btn-country");
+
+button.on("click", function() {
+    console.log("Button pressed!")
+    tbody.html("");
+    var newcountry = d3.select("#country").property("value");
+    console.log(newcountry);
+
+    var outputData = data.filter(function(filteredData) {
+        return(filteredData.country == newcountry )
+    });
+    console.log(outputData)
+    outputData.forEach(function(ufoSightings) {
+        // console.log(ufoSightings);
+        var row = tbody.append("tr");
+        Object.entries(ufoSightings).forEach(function([key, value]) {
+        //   console.log(key, value);
+          // Append a cell to the row for each value
+          // in the weather report object
+          var cell = row.append("td");
+          cell.text(value);
+        });
+      });
+});
+
+//Shape function
+var tbody = d3.select("tbody");
+tbody.html("");
+var button = d3.select("#filter-btn-shape");
+
+button.on("click", function() {
+    console.log("Button pressed!")
+    tbody.html("");
+    var newshape = d3.select("#shape").property("value");
+    console.log(newshape);
+
+    var outputData = data.filter(function(filteredData) {
+        return(filteredData.shape == newshape)
+    });
+    console.log(outputData)
+    outputData.forEach(function(ufoSightings) {
+        // console.log(ufoSightings);
+        var row = tbody.append("tr");
+        Object.entries(ufoSightings).forEach(function([key, value]) {
+        //   console.log(key, value);
+          // Append a cell to the row for each value
+          // in the weather report object
+          var cell = row.append("td");
+          cell.text(value);
+        });
+      });
+});
+
  // // Step 5: Use d3 to update each cell's text with
   // // ufoSightings values (weekday, date, high, low)
   data.forEach(function(ufoSightings) {
