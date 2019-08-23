@@ -132,7 +132,7 @@ var graymap_background = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/li
   earthquakes.addTo(map);
 
   var legend = L.control({
-    position: "bottomright"
+    position: "bottomleft"
   });
 
 
@@ -153,8 +153,8 @@ var graymap_background = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/li
 
 
     for (var i = 0; i < grades.length; i++) {
-      div.innerHTML += "<i style='background: " + colors[i] + "'></i> " +
-        grades[i] + (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
+      div.innerHTML += "<i style='background: " + colors[i] + "'>&nbsp;&nbsp;&nbsp;</i>&nbsp;" +
+        "<span style='color: gray'>" + (grades[i] + (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+")) + "</span>";
     }
     return div;
   }
