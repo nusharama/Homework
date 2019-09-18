@@ -15,7 +15,6 @@ var margin = {
 var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
-
 // Create the canvas to append the SVG group that contains the states data
 // Give the canvas width and height calling the variables predifined.
 var svg = d3
@@ -75,8 +74,6 @@ chartGroup.append("g")
 .attr("transform", `translate(0, ${height})`)
 .call(bottomAxis);
 
-
-
 // Left axis is already at 0,0
 // Only append the left axis
 chartGroup.append("g")
@@ -103,8 +100,6 @@ var circlesGroup = chartGroup.selectAll()
 .style("text-anchor", "middle")
 .style('fill', 'white')
 .text(d => (d.abbr))
-
-
 
 // // Step 1: Append a div to the body to create tooltips, assign it a class
 // var toolTip = d3.select("body").append("div")
