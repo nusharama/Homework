@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Citi Bike Visualization & Analysis Dashboard</title>
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
+
+        <!--Bootstrap-->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+         <!-- Bootstrap/Bootswatch CSS -->
+         <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin=""/>
+
+        <!-- Icons -->
+        <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link rel="stylesheet" href="css/leaflet.extra-markers.min.css">
+        
+        <!-- Our CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+      
+        <!-- Trying out fontawesome-->
+        <script src="https://kit.fontawesome.com/77fbeea059.js"></script>
+      </head>
+
+    <body>
+        <!--Navigation-->
+        <div class="navigation">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-1">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand" href="CitibikeAnalysis.html">CitiBike Fact File</a>
+                        
+                        <!--Drop Down Menu-->
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav ml-auto">
+                                    
+                                <li class="nav-item">
+                                    <a class="nav-link" href="citibike-sample.html">CitiBike Tableau Dashboard</a>
+                                </li>
+
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="data.html">Data Analysis</a> -->
+                                </li>
+                                    <!--
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                           href="#" role="button" aria-haspopup="true" aria-expanded="false" id='navbarNavDropdownMenuLink'>
+                                           Plots
+                                        </a>
+                                    
+                                        <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="visual1.html">Visual 1</a></li>
+                                                <li><a class="dropdown-item" href="visual2.html">Visual 2</a></li>
+                                                <li><a class="dropdown-item" href="visual3.html">Visual 3</a></li>
+                                                <li><a class="dropdown-item" href="visual4.html">Visual 4</a></li> 
+                                    </ul>
+                                    -->    
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link" href="processdocumentation.html">Process Documentation</a> -->
+                                    </li>
+                                </li>
+                             
+                            </ul>
+                        </div> <!--Closes Drop Down Menu-->
+                </nav>
+        </div> <!--Closes Navigation Div-->
+        <!---------------------------------------------------------------------------------------------------------------------->
+        <!-- The div that holds our map -->
+        
+        <h1 class="title">Citi Bike Analysis</h1>
+        <!-- Added little bicycle using fontawesome-->
+        <h2> June, 2015 thru July, 2019 <i class="fas fa-bicycle"></i> </h2> 
+
+        <h4 id="statements">Profile of Citi Bike riders </h4>
+
+        <p id="statements"> Citi Bike extended it's service by adding 50 stations and 500 bikes in Jersey City, New Jersey. 
+            CitiBike officially opened in May 2013 with 332 stations and 6,000 bikes. Annual expansions have brought the totals to 706 stations and 12,000 bikes as of October 2017, making the 
+            service the largest bike sharing program in the United States. Further expansions for Citi Bike are planned to extend its service area across Manhattan, Brooklyn, and Queens, and increase the 
+            number of bikes to 40,000. As of July 2017, there are 130,000 annual subscribers. Citi Bike riders took an average of 38,491 rides per day in 2016, and the system reached a total of 50 million rides in October 2017.
+        </p>
+
+        <p id="statements">
+            The Citi Bike Annual Membership is currently $169 per year and riders can take as many rides as they want, 
+            for a max time of 45 minutes. The first 45 minutes of each ride on a classic Citi Bike are included in the annual membership price.
+            If you keep a bike out for longer than 45 minutes at a time, regardless of the type, it's an extra $2.50 per additional 15 minutes.It is safe to assume
+            that no one would be willing to rent a bike for more than 2 hours, if they did, it would cost them an additional $20 assuming that they are annual subscribers.           
+        </p>
+
+        <p id="statements">
+            Most of the trips taken by Citi Bike riders in Jersey City are to the PATH train stations, which connects commuters to
+            Midtown and Lower Manhattan in roughly 20 minutes. The most popular citibike routes turned out to be Central Park loops, Hudson river greenway, East river greenway, Brooklyn Bridge Park, Prospect Park Loop, Brooklyn Waterfront Greenway, Jersey City Waterfront,
+            Governors Island, Start High, End Low: From the High Line to the Lower East Side and A Three-Borough Tour - High Line to the Lower East Side of Manhattan,  
+        </p>
+        
+        <img id="graphs" src="img/populartrips.JPG" width="1000">
+        <p id="statements">The following top top stations in Jersey City account for 45% of all market share:</p>
+                <li id="statements">
+                    Grove Street PATH
+                </li>
+                <li id="statements">
+                    Hamilton Park
+                </li>
+                <li id="statements">
+                    Harborside
+                </li>
+                <li id="statements">
+                    Sip Avenue
+                </li>
+                <li id="statements">
+                    Newport PATH
+                </li>
+                <li id="statements">
+                    Marin Light Rail
+                </li>
+                <li id="statements">
+                    Newport Parkway
+                </li>
+                <li id="statements">
+                    Newark Avenue
+                </li>
+                <li id="statements">
+                    Morris Canal
+                </li>
+                <li id="statements">
+                    Paulus Hook
+                </li>
+        <p>
+        </p>
+                <img id="graphs" src="img/topfivestations.JPG" width="800">
+        <h4 id="statements">Who's our commuter? </h4>
+        <p id="statements"> 
+            For the month of July, 2019, most Citi Bike riders were male (60%), with an average age of 34. 
+
+            According to <a href="https://www.zillow.com/downtown-jersey-city-nj/home-values/">Zillow</a>, 
+            the median home value in Downtown Jersey City is $762,200 and the median rent is $2,650. The median household income is $100,336 a year.
+            In comparison, the median home value in New York is $671,400. New York home values have gone up 0.1% over the past year and Zillow predicts they will fall -1.0% within the next year. 
+            The median list price per square foot in New York is $668, which is higher than the New York-Newark-Jersey City Metro average of $280. The median price of homes currently listed 
+            in New York is $775,000. The median rent price in New York is $2,900, which is lower than the New York-Newark-Jersey City Metro median of $3,000.
+        </p>
+            <figure id="graphs">
+            <img src="img/citi_bike_commuter.jpg" width="500">
+                        <img src="img/citibike.png" width="200">
+            <a href="https://www.nj.com/hudson/2016/03/citi_bike_jersey_city_popular.html"><figcaption>NJ.com</figcaption></a>
+            <a href="https://www.citibikenyc.com/"><figcaption>citibikenyc.com</figcaption></a>
+            </figure>
+        <h4 id="statements">Potential Market Opportunities </h4>
+        <p id="statements"> Considering the price tag of housing and the high median household income, 
+            we propose Citi Bike to expand it's offerings just like CapitalOne. 
+            That is, Citi could potentially offer food and beverages at high volume stations. 
+            Overall, the top 10 stations account for 46% of all usage. 
+        </p>
+        <p id="statements"> 
+        </p>
+
+
+
+        <!-- <img id="graphs" src="img/juicebar.jpg" width="700"> -->
+        
+        <!-- D3 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+
+        <!-- MomentJS -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+
+        <!-- Leaflet JavaScript -->
+        <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+        integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+        crossorigin=""></script>
+
+        <!-- Icons -->
+        <script src="js/leaflet.extra-markers.min.js"></script>
+
+        <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+        <!-- API Key -->
+        <script type="text/javascript" src="js/config.js"></script>
+
+        <!-- Our JavaScript -->
+        <script type="text/javascript" src="js/logic.js"></script>
+
+        <!--Footer-->
+        <footer>
+                <div class="container"></div>
+                <div class="footer"> Citi Bike Analysis<i class="fas fa-biking"></i> 
+                    <a href="https://github.com/nusharama/Homework/tree/master/Tableau"><i class="fab fa-github"></i></a>
+                </div>
+
+                
+
+                <a style="color: white; font-size: 10px" href="https://spcs.richmond.edu/noncredit/programs/data-analytics/" data-toggle="popover" title="UR Data Analytics" data-content="University of Richmond Data Analytics Bootcamp">UR Data Analytics Bootcamp</a>
+            </footer>
+    </body>
+</html>

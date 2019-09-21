@@ -1,0 +1,629 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.19.0818.2120                               -->
+<workbook source-build='2019.2.3 (20192.19.0818.2120)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts ignorable='true' predowngraded='true' />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='gender' inline='true' name='federated.0wqcnmv0r90f9510bltqg1yimtnp' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='gender' name='textscan.02iaw3a1w4v84b12o2b5t1kb5zhq'>
+            <connection class='textscan' directory='C:/Users/anoos/Desktop/CitiBike Projects/Tableau-CitiBikeAnalytics/csv' filename='gender.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.02iaw3a1w4v84b12o2b5t1kb5zhq' name='gender.csv' table='[gender#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='month' ordinal='0' />
+            <column datatype='integer' name='malecount' ordinal='1' />
+            <column datatype='integer' name='femalecount' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[gender.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[gender.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>malecount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[malecount]</local-name>
+            <parent-name>[gender.csv]</parent-name>
+            <remote-alias>malecount</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>femalecount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[femalecount]</local-name>
+            <parent-name>[gender.csv]</parent-name>
+            <remote-alias>femalecount</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Femalecount' datatype='integer' name='[femalecount]' role='measure' type='quantitative' />
+      <column caption='Malecount' datatype='integer' name='[malecount]' role='measure' type='quantitative' />
+      <column caption='Month' datatype='string' name='[month]' role='dimension' type='nominal' />
+      <column-instance column='[femalecount]' derivation='Sum' name='[pcdf:sum:femalecount:qk]' pivot='key' type='quantitative'>
+        <table-calc diff-options='Relative' ordering-type='Rows' type='PctDiff'>
+          <address>
+            <value>-1</value>
+          </address>
+        </table-calc>
+      </column-instance>
+      <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[femalecount]' derivation='Sum' name='[sum:femalecount:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[malecount]' derivation='Sum' name='[sum:malecount:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.484416' measure-ordering='alphabetic' measure-percentage='0.515584' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='shape' field='[:Measure Names]' type='shape'>
+            <map to='circle'>
+              <bucket>&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[pcdf:sum:femalecount:qk]&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[sum:femalecount:qk]&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[sum:malecount:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' palette='superfishel_stone_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[pcdf:sum:femalecount:qk]&quot;</bucket>
+            </map>
+            <map to='#6388b4'>
+              <bucket>&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[sum:femalecount:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[sum:Number of Records:qk]&quot;</bucket>
+            </map>
+            <map to='#ffae34'>
+              <bucket>&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[sum:malecount:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Female Ridership Growth 2013-2018'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#00007f' fontname='Tableau Bold'>Female Ridership Growth 2013-2018</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='gender' name='federated.0wqcnmv0r90f9510bltqg1yimtnp' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wqcnmv0r90f9510bltqg1yimtnp'>
+            <column caption='Femalecount' datatype='integer' name='[femalecount]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='string' name='[month]' role='dimension' type='nominal' />
+            <column-instance column='[month]' derivation='None' name='[none:month:nk]' pivot='key' type='nominal' />
+            <column-instance column='[femalecount]' derivation='Sum' name='[pcdf:sum:femalecount:qk]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Rows' type='PctDiff'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+          </datasource-dependencies>
+          <manual-sort column='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[none:month:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;13-Jul&quot;</bucket>
+              <bucket>&quot;13-Aug&quot;</bucket>
+              <bucket>&quot;13-Sep&quot;</bucket>
+              <bucket>&quot;13-Oct&quot;</bucket>
+              <bucket>&quot;13-Nov&quot;</bucket>
+              <bucket>&quot;13-Dec&quot;</bucket>
+              <bucket>&quot;14-Jan&quot;</bucket>
+              <bucket>&quot;14-Feb&quot;</bucket>
+              <bucket>&quot;14-Mar&quot;</bucket>
+              <bucket>&quot;14-Apr&quot;</bucket>
+              <bucket>&quot;14-May&quot;</bucket>
+              <bucket>&quot;14-Jun&quot;</bucket>
+              <bucket>&quot;14-Jul&quot;</bucket>
+              <bucket>&quot;14-Aug&quot;</bucket>
+              <bucket>&quot;14-Sep&quot;</bucket>
+              <bucket>&quot;14-Oct&quot;</bucket>
+              <bucket>&quot;14-Nov&quot;</bucket>
+              <bucket>&quot;14-Dec&quot;</bucket>
+              <bucket>&quot;15-Jan&quot;</bucket>
+              <bucket>&quot;15-Feb&quot;</bucket>
+              <bucket>&quot;15-Mar&quot;</bucket>
+              <bucket>&quot;15-Apr&quot;</bucket>
+              <bucket>&quot;15-May&quot;</bucket>
+              <bucket>&quot;15-Jun&quot;</bucket>
+              <bucket>&quot;15-Jul&quot;</bucket>
+              <bucket>&quot;15-Aug&quot;</bucket>
+              <bucket>&quot;15-Sep&quot;</bucket>
+              <bucket>&quot;15-Oct&quot;</bucket>
+              <bucket>&quot;15-Nov&quot;</bucket>
+              <bucket>&quot;15-Dec&quot;</bucket>
+              <bucket>&quot;16-Jan&quot;</bucket>
+              <bucket>&quot;16-Feb&quot;</bucket>
+              <bucket>&quot;16-Mar&quot;</bucket>
+              <bucket>&quot;16-Apr&quot;</bucket>
+              <bucket>&quot;16-May&quot;</bucket>
+              <bucket>&quot;16-Jun&quot;</bucket>
+              <bucket>&quot;16-Jul&quot;</bucket>
+              <bucket>&quot;16-Aug&quot;</bucket>
+              <bucket>&quot;16-Sep&quot;</bucket>
+              <bucket>&quot;16-Oct&quot;</bucket>
+              <bucket>&quot;16-Nov&quot;</bucket>
+              <bucket>&quot;16-Dec&quot;</bucket>
+              <bucket>&quot;17-Jan&quot;</bucket>
+              <bucket>&quot;17-Feb&quot;</bucket>
+              <bucket>&quot;17-Mar&quot;</bucket>
+              <bucket>&quot;17-Apr&quot;</bucket>
+              <bucket>&quot;17-May&quot;</bucket>
+              <bucket>&quot;17-Jun&quot;</bucket>
+              <bucket>&quot;17-Jul&quot;</bucket>
+              <bucket>&quot;17-Aug&quot;</bucket>
+              <bucket>&quot;17-Sep&quot;</bucket>
+              <bucket>&quot;17-Oct&quot;</bucket>
+              <bucket>&quot;17-Nov&quot;</bucket>
+              <bucket>&quot;17-Dec&quot;</bucket>
+              <bucket>&quot;18-Jan&quot;</bucket>
+              <bucket>&quot;18-Feb&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#f28e2b' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0wqcnmv0r90f9510bltqg1yimtnp].[pcdf:sum:femalecount:qk]</rows>
+        <cols>[federated.0wqcnmv0r90f9510bltqg1yimtnp].[none:month:nk]</cols>
+      </table>
+      <simple-id uuid='{04CCA841-7993-4AEC-BFA1-2117C8CC04B4}' />
+    </worksheet>
+    <worksheet name='Gender Count (Male vs Female) 2013 - 2018'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#00007f' fontname='Tableau Bold'>Gender Count (Male vs Female) 2013-2018</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='gender' name='federated.0wqcnmv0r90f9510bltqg1yimtnp' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wqcnmv0r90f9510bltqg1yimtnp'>
+            <column caption='Femalecount' datatype='integer' name='[femalecount]' role='measure' type='quantitative' />
+            <column caption='Malecount' datatype='integer' name='[malecount]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='string' name='[month]' role='dimension' type='nominal' />
+            <column-instance column='[month]' derivation='None' name='[none:month:nk]' pivot='key' type='nominal' />
+            <column-instance column='[femalecount]' derivation='Sum' name='[sum:femalecount:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[malecount]' derivation='Sum' name='[sum:malecount:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[sum:femalecount:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[sum:malecount:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <color column='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]' />
+              <lod column='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='shape' value='circle' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0wqcnmv0r90f9510bltqg1yimtnp].[Multiple Values]</rows>
+        <cols>[federated.0wqcnmv0r90f9510bltqg1yimtnp].[none:month:nk]</cols>
+      </table>
+      <simple-id uuid='{503A4A7D-DC8A-4CF6-93E5-0B73D537A556}' />
+    </worksheet>
+    <worksheet name='Gender Count (Male vs Female) 2013-2018'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#00007f' fontname='Tableau Bold'>Gender Count (Male vs Female) 2013-2018</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='gender' name='federated.0wqcnmv0r90f9510bltqg1yimtnp' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wqcnmv0r90f9510bltqg1yimtnp'>
+            <column caption='Femalecount' datatype='integer' name='[femalecount]' role='measure' type='quantitative' />
+            <column caption='Malecount' datatype='integer' name='[malecount]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='string' name='[month]' role='dimension' type='nominal' />
+            <column-instance column='[month]' derivation='None' name='[none:month:nk]' pivot='key' type='nominal' />
+            <column-instance column='[femalecount]' derivation='Sum' name='[sum:femalecount:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[malecount]' derivation='Sum' name='[sum:malecount:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[sum:femalecount:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0wqcnmv0r90f9510bltqg1yimtnp].[sum:malecount:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[none:month:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;13-Jul&quot;</bucket>
+              <bucket>&quot;13-Aug&quot;</bucket>
+              <bucket>&quot;13-Sep&quot;</bucket>
+              <bucket>&quot;13-Oct&quot;</bucket>
+              <bucket>&quot;13-Nov&quot;</bucket>
+              <bucket>&quot;13-Dec&quot;</bucket>
+              <bucket>&quot;14-Jan&quot;</bucket>
+              <bucket>&quot;14-Feb&quot;</bucket>
+              <bucket>&quot;14-Mar&quot;</bucket>
+              <bucket>&quot;14-Apr&quot;</bucket>
+              <bucket>&quot;14-May&quot;</bucket>
+              <bucket>&quot;14-Jun&quot;</bucket>
+              <bucket>&quot;14-Jul&quot;</bucket>
+              <bucket>&quot;14-Aug&quot;</bucket>
+              <bucket>&quot;14-Sep&quot;</bucket>
+              <bucket>&quot;14-Oct&quot;</bucket>
+              <bucket>&quot;14-Nov&quot;</bucket>
+              <bucket>&quot;14-Dec&quot;</bucket>
+              <bucket>&quot;15-Jan&quot;</bucket>
+              <bucket>&quot;15-Feb&quot;</bucket>
+              <bucket>&quot;15-Mar&quot;</bucket>
+              <bucket>&quot;15-Apr&quot;</bucket>
+              <bucket>&quot;15-May&quot;</bucket>
+              <bucket>&quot;15-Jun&quot;</bucket>
+              <bucket>&quot;15-Jul&quot;</bucket>
+              <bucket>&quot;15-Aug&quot;</bucket>
+              <bucket>&quot;15-Sep&quot;</bucket>
+              <bucket>&quot;15-Oct&quot;</bucket>
+              <bucket>&quot;15-Nov&quot;</bucket>
+              <bucket>&quot;15-Dec&quot;</bucket>
+              <bucket>&quot;16-Jan&quot;</bucket>
+              <bucket>&quot;16-Feb&quot;</bucket>
+              <bucket>&quot;16-Mar&quot;</bucket>
+              <bucket>&quot;16-Apr&quot;</bucket>
+              <bucket>&quot;16-May&quot;</bucket>
+              <bucket>&quot;16-Jun&quot;</bucket>
+              <bucket>&quot;16-Jul&quot;</bucket>
+              <bucket>&quot;16-Aug&quot;</bucket>
+              <bucket>&quot;16-Sep&quot;</bucket>
+              <bucket>&quot;16-Oct&quot;</bucket>
+              <bucket>&quot;16-Nov&quot;</bucket>
+              <bucket>&quot;16-Dec&quot;</bucket>
+              <bucket>&quot;17-Jan&quot;</bucket>
+              <bucket>&quot;17-Feb&quot;</bucket>
+              <bucket>&quot;17-Mar&quot;</bucket>
+              <bucket>&quot;17-Apr&quot;</bucket>
+              <bucket>&quot;17-May&quot;</bucket>
+              <bucket>&quot;17-Jun&quot;</bucket>
+              <bucket>&quot;17-Jul&quot;</bucket>
+              <bucket>&quot;17-Aug&quot;</bucket>
+              <bucket>&quot;17-Sep&quot;</bucket>
+              <bucket>&quot;17-Oct&quot;</bucket>
+              <bucket>&quot;17-Nov&quot;</bucket>
+              <bucket>&quot;17-Dec&quot;</bucket>
+              <bucket>&quot;18-Jan&quot;</bucket>
+              <bucket>&quot;18-Feb&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]' />
+              <lod column='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[none:month:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#4e79a7' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0wqcnmv0r90f9510bltqg1yimtnp].[Multiple Values]</rows>
+        <cols>[federated.0wqcnmv0r90f9510bltqg1yimtnp].[none:month:nk]</cols>
+      </table>
+      <simple-id uuid='{BC800E97-D2F1-4D24-881F-69F51772514A}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='900' maxwidth='1100' minheight='900' minwidth='1100' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98222' id='7' param='horz' type='layout-flow' w='98546' x='727' y='889'>
+            <zone h='98222' id='5' type='layout-basic' w='98546' x='727' y='889'>
+              <zone h='49111' id='3' name='Gender Count (Male vs Female) 2013-2018' w='98546' x='727' y='889'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49111' id='9' name='Gender Count (Male vs Female) 2013 - 2018' w='49271' x='727' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49111' id='10' name='Female Ridership Growth 2013-2018' w='49275' x='49998' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone fixed-size='160' h='11889' id='6' is-fixed='true' param='vert' type='layout-flow' w='14545' x='26636' y='7556'>
+          <zone h='7445' id='8' name='Gender Count (Male vs Female) 2013-2018' pane-specification-id='2' param='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]' type='color' w='14545' x='26636' y='7556'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='950' minheight='950' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='19' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='20' param='vert' type='layout-flow' w='98546' x='727' y='889'>
+                <zone fixed-size='280' h='49111' id='3' is-fixed='true' name='Gender Count (Male vs Female) 2013-2018' w='98546' x='727' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7445' id='8' name='Gender Count (Male vs Female) 2013-2018' pane-specification-id='2' param='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]' type='color' w='14545' x='26636' y='7556'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49111' id='9' is-fixed='true' name='Gender Count (Male vs Female) 2013 - 2018' w='49271' x='727' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49111' id='10' is-fixed='true' name='Female Ridership Growth 2013-2018' w='49275' x='49998' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{277C7D51-22F5-470B-8008-C0549358092C}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.10417' source-height='32'>
+    <window class='worksheet' name='Gender Count (Male vs Female) 2013-2018'>
+      <cards>
+        <edge name='left'>
+          <strip size='158'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='29'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='158'>
+            <card pane-specification-id='2' param='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{EAACE232-52B7-48E1-BAA7-6DCEA7BFFDB9}' />
+    </window>
+    <window class='worksheet' name='Gender Count (Male vs Female) 2013 - 2018'>
+      <cards>
+        <edge name='left'>
+          <strip size='158'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='29'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='158'>
+            <card pane-specification-id='1' param='[federated.0wqcnmv0r90f9510bltqg1yimtnp].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0180EF26-9915-42B7-8CF3-118B16BB1652}' />
+    </window>
+    <window class='worksheet' name='Female Ridership Growth 2013-2018'>
+      <cards>
+        <edge name='left'>
+          <strip size='158'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='29'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{30CC6960-7E0C-453B-B801-8AECF3E5AC09}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Female Ridership Growth 2013-2018'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Gender Count (Male vs Female) 2013 - 2018'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Gender Count (Male vs Female) 2013-2018'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{FEF17581-2F93-4322-883E-F2D14974D45E}' />
+    </window>
+  </windows>
+</workbook>
