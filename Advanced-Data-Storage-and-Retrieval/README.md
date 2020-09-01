@@ -1,6 +1,6 @@
 # Surfs Up!
 
-![surfs-up.jpeg](Images/surfs-up.png)
+![surfs-up.png](Images/surfs-up.png)
 
 Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do.
 
@@ -28,7 +28,7 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
 * Plot the results using the DataFrame `plot` method.
 
-  ![precipitation](Images/precipitation.png)
+  ![precipitation.png](Images/precipitation.png)
 
 * Use Pandas to print the summary statistics for the precipitation data.
 
@@ -50,7 +50,7 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
   * Plot the results as a histogram with `bins=12`.
 
-    ![station-histogram](Images/station-histogram.png)
+    ![station-histogram.png](Images/station-histogram.png)
 
 - - -
 
@@ -114,7 +114,7 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
   * Use the peak-to-peak (tmax-tmin) value as the y error bar (yerr).
 
-    ![temperature](Images/temperature.png)
+    ![temperature.png](Images/temperature.png)
 
 ### Daily Rainfall Average.
 
@@ -130,7 +130,7 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
 * Use Pandas to plot an area plot (`stacked=False`) for the daily normals.
 
-  ![daily-normals](Images/daily-normals.png)
+  ![daily-normals.png](Images/daily-normals.png)
 
 ## Copyright
 
