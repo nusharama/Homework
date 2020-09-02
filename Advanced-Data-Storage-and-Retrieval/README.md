@@ -1,6 +1,5 @@
 # Surfs Up!
-
-![surfs-up](Images/surfs-up.png)
+<img width="643" alt="surfs-up" src="https://user-images.githubusercontent.com/49352417/92030364-eee09780-ed34-11ea-8b65-deb7f3ff812e.png">
 
 Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do.
 
@@ -28,7 +27,7 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
 * Plot the results using the DataFrame `plot` method.
 
-  ![precipitation.png](Images/precipitation.png)
+<img width="643" alt="precipitation" src="https://user-images.githubusercontent.com/49352417/92030360-edaf6a80-ed34-11ea-9aa0-4fa39f07d477.png">
 
 * Use Pandas to print the summary statistics for the precipitation data.
 
@@ -49,8 +48,8 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
   * Filter by the station with the highest number of observations.
 
   * Plot the results as a histogram with `bins=12`.
-
-    ![station-histogram.png](Images/station-histogram.png)
+  
+<img width="340" alt="station-histogram" src="https://user-images.githubusercontent.com/49352417/92030363-ee480100-ed34-11ea-82cc-5849531f8188.png">
 
 - - -
 
@@ -114,7 +113,7 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
   * Use the peak-to-peak (tmax-tmin) value as the y error bar (yerr).
 
-    ![temperature.png](Images/temperature.png)
+  <img width="340" alt="temperature" src="https://user-images.githubusercontent.com/49352417/92030415-0029a400-ed35-11ea-9b23-6f12cc8ec45c.png">
 
 ### Daily Rainfall Average.
 
@@ -130,7 +129,7 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
 * Use Pandas to plot an area plot (`stacked=False`) for the daily normals.
 
-  ![daily-normals.png](Images/daily-normals.png)
+ <img width="673" alt="daily_normals" src="https://user-images.githubusercontent.com/49352417/92030417-00c23a80-ed35-11ea-9f98-414819de96c1.png">
 
 ## Copyright
 
