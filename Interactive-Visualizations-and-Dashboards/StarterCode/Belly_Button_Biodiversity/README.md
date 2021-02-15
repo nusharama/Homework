@@ -1,6 +1,6 @@
 # Belly Button Biodiversity
 
-![Bacteria by filterforge.com](Images/bacteria_by_filterforgedotcom.png)
+![Bacteria by filterforge.com](Images/bacteria_by_filterforgedotcom.jpg)
 
 
 In this assignment, you will build an interactive dashboard to explore the [Belly Button Biodiversity DataSet](http://robdunnlab.com/projects/belly-button-biodiversity/).
@@ -17,7 +17,7 @@ Use Plotly.js to build interactive charts for your dashboard.
 
   * Use `otu_labels` as the hovertext for the chart.
 
-  ![PIE Chart](Images/pie_chart.png)
+  ![PIE Chart](Images/pie_chart.jpg)
 
 * Create a Bubble Chart that uses data from your samples route (`/samples/<sample>`) to display each sample.
 
@@ -31,7 +31,7 @@ Use Plotly.js to build interactive charts for your dashboard.
 
   * Use `otu_labels` for the text values.
 
-  ![Bubble Chart](Images/bubble_chart.png)
+  ![Bubble Chart](Images/bubble_chart.jpg)
 
 * Display the sample metadata from the route `/metadata/<sample>`
 
@@ -41,8 +41,8 @@ Use Plotly.js to build interactive charts for your dashboard.
 
 * You are welcome to create any layout that you would like for your dashboard. An example dashboard page might look something like the following.
 
-![Example Dashboard Page](Images/dashboard_part1.png)
-![Example Dashboard Page](Images/dashboard_part2.png)
+![Example Dashboard Page](Images/dashboard_part1.jpg)
+![Example Dashboard Page](Images/dashboard_part2.jpg)
 
 ## Step 2 - Heroku
 
@@ -64,7 +64,7 @@ The following task is completely optional and is very advanced.
 
 * Update the chart whenever a new sample is selected.
 
-![Weekly Washing Frequency Gauge](Images/gauge.png)
+![Weekly Washing Frequency Gauge](Images/gauge.jpg)
 
 - - -
 
