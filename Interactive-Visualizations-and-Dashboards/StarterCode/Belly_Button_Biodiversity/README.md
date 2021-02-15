@@ -2,8 +2,6 @@
 
 ![bacteria_by_filterforgedotcom](Instructions/Images/bacteria_by_filterforgedotcom.jpg)
 
-![4-scatter](Images/4-scatter.jpg)
-
 In this assignment, you will build an interactive dashboard to explore the [Belly Button Biodiversity DataSet](http://robdunnlab.com/projects/belly-button-biodiversity/).
 
 ## Step 1 - Plotly.js
