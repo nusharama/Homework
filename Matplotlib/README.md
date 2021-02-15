@@ -43,7 +43,7 @@ As final considerations:
 
 ![Laboratory](Laboratory.jpg)
 
-![Laboratory](C:\Users\anoos\RICH201904DATA3\5-Matplotlib\HomeWord\Images\Laboratory.jpg)
+![Laboratory](HomeWord\Images\Laboratory.jpg)
 
 While your data companions rushed off to jobs in finance and government, you remained adamant that science was the way for you. Staying true to your mission, you've since joined Pymaceuticals Inc., a burgeoning pharmaceutical company based out of San Diego, CA. Pymaceuticals specializes in drug-based, anti-cancer pharmaceuticals. In their most recent efforts, they've since begun screening for potential treatments to squamous cell carcinoma (SCC), a commonly occurring form of skin cancer.
 
