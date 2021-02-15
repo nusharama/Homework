@@ -73,7 +73,6 @@ Large screen:
 
 Small screen:
 ![Landing page small screen](landing-sm.png)
-￼
 
 #### Comparisons page
 
